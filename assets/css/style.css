@@ -1,6 +1,5 @@
 /* LOOK Vila Prudente · Solidi
-   Identidade extraida do book Folheto_21x21cm_v4.pdf
-   Agencia RPK · 2026 */
+   Identidade extraida do book Folheto_21x21cm_v4.pdf */
 
 :root{
   --terracota:#B5674A;
@@ -102,11 +101,10 @@ section{padding:clamp(72px,9vw,130px) 0}
 /* selo do programa, canto superior direito da capa */
 .hero-topo{position:absolute;left:0;right:0;top:calc(var(--header-h) + 22px);z-index:3}
 .hero-topo .container{display:flex;justify-content:flex-end}
-.selo-mcmv{
-  background:#fff;padding:11px 15px;border-radius:2px;
-  box-shadow:0 8px 30px rgba(20,16,14,.28)
+.selo-mcmv img{
+  width:clamp(104px,10vw,132px);height:auto;display:block;
+  filter:drop-shadow(0 2px 14px rgba(20,16,14,.6))
 }
-.selo-mcmv img{width:clamp(94px,9vw,118px);height:auto;display:block}
 .hero-chamadas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
 .tag{
   padding:9px 20px;border:1px solid rgba(255,255,255,.6);

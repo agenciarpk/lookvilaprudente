@@ -1,5 +1,4 @@
-/* LOOK Vila Prudente · interacoes da LP
-   Agencia RPK · 2026 */
+/* LOOK Vila Prudente */
 (function () {
   'use strict';
 
