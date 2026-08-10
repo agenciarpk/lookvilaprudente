@@ -52,6 +52,91 @@
   document.getElementById('lbFechar').addEventListener('click', fechar);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechar(); });
 
+  /* galeria: palco + carrossel de miniaturas */
+  (function () {
+    var palco = document.getElementById('galImg');
+    var cap = document.getElementById('galCap');
+    var trilho = document.getElementById('galThumbs');
+    if (!palco || !trilho) return;
+
+    var thumbs = [].slice.call(trilho.querySelectorAll('.gal-thumb'));
+    var prev = document.querySelector('.gal-prev');
+    var next = document.querySelector('.gal-next');
+    var atual = 0;
+    var autoPlay = null;
+    var paradoPeloUsuario = false;
+
+    function mostrar(i, rolar) {
+      i = (i + thumbs.length) % thumbs.length;
+      atual = i;
+      var t = thumbs[i];
+
+      palco.src = t.getAttribute('data-src');
+      palco.alt = t.getAttribute('data-alt');
+      palco.setAttribute('data-full', t.getAttribute('data-src'));
+      cap.textContent = t.getAttribute('data-cap');
+
+      /* reinicia a animacao de entrada */
+      palco.style.animation = 'none';
+      void palco.offsetWidth;
+      palco.style.animation = '';
+
+      thumbs.forEach(function (b, n) { b.setAttribute('aria-selected', n === i ? 'true' : 'false'); });
+      if (rolar !== false) {
+        var alvo = t.offsetLeft - (trilho.clientWidth - t.offsetWidth) / 2;
+        trilho.scrollTo({ left: Math.max(0, alvo), behavior: 'smooth' });
+      }
+      atualizarSetas();
+    }
+
+    function atualizarSetas() {
+      if (!prev || !next) return;
+      prev.disabled = atual === 0;
+      next.disabled = atual === thumbs.length - 1;
+    }
+
+    function parar() {
+      paradoPeloUsuario = true;
+      if (autoPlay) { clearInterval(autoPlay); autoPlay = null; }
+    }
+
+    thumbs.forEach(function (b, i) {
+      b.addEventListener('click', function () { parar(); mostrar(i); });
+    });
+    if (prev) prev.addEventListener('click', function () { parar(); mostrar(atual - 1); });
+    if (next) next.addEventListener('click', function () { parar(); mostrar(atual + 1); });
+
+    trilho.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      parar();
+      mostrar(atual + (e.key === 'ArrowRight' ? 1 : -1));
+      thumbs[atual].focus();
+    });
+
+    ['pointerdown', 'wheel', 'touchstart'].forEach(function (ev) {
+      trilho.addEventListener(ev, parar, { passive: true });
+    });
+
+    /* avanca sozinho ate o primeiro toque do visitante, e so quando visivel */
+    var reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduzido && 'IntersectionObserver' in window) {
+      var galeria = document.getElementById('galeria');
+      new IntersectionObserver(function (ents) {
+        ents.forEach(function (ent) {
+          if (paradoPeloUsuario) return;
+          if (ent.isIntersecting && !autoPlay) {
+            autoPlay = setInterval(function () { mostrar(atual + 1); }, 5000);
+          } else if (!ent.isIntersecting && autoPlay) {
+            clearInterval(autoPlay); autoPlay = null;
+          }
+        });
+      }, { threshold: 0.35 }).observe(galeria);
+    }
+
+    mostrar(0, false);
+  })();
+
   /* mascara de telefone */
   var tel = document.getElementById('telefone');
   tel.addEventListener('input', function () {

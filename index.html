@@ -127,17 +127,58 @@
     </div>
 
     <div class="galeria reveal" id="galeria">
-      <figure class="item grande"><img src="assets/img/portaria-1200.webp" alt="Perspectiva ilustrada da portaria" width="1200" height="540" loading="lazy" data-full="assets/img/portaria-1920.webp"><figcaption>Portaria</figcaption></figure>
-      <figure class="item"><img src="assets/img/salao-festas-760.webp" alt="Perspectiva ilustrada do salão de festas" width="760" height="424" loading="lazy" data-full="assets/img/salao-festas-1920.webp"><figcaption>Salão de festas</figcaption></figure>
-      <figure class="item"><img src="assets/img/churrasqueira-760.webp" alt="Perspectiva ilustrada da churrasqueira" width="760" height="424" loading="lazy" data-full="assets/img/churrasqueira-1920.webp"><figcaption>Churrasqueira</figcaption></figure>
-      <figure class="item"><img src="assets/img/fitness-760.webp" alt="Perspectiva ilustrada do fitness" width="760" height="446" loading="lazy" data-full="assets/img/fitness-1920.webp"><figcaption>Fitness</figcaption></figure>
-      <figure class="item grande"><img src="assets/img/brinquedoteca-1200.webp" alt="Perspectiva ilustrada da brinquedoteca" width="1200" height="540" loading="lazy" data-full="assets/img/brinquedoteca-1920.webp"><figcaption>Brinquedoteca</figcaption></figure>
-      <figure class="item"><img src="assets/img/playground-760.webp" alt="Perspectiva ilustrada do playground" width="760" height="424" loading="lazy" data-full="assets/img/playground-1920.webp"><figcaption>Playground</figcaption></figure>
-      <figure class="item"><img src="assets/img/quadra-760.webp" alt="Perspectiva ilustrada da quadra" width="760" height="428" loading="lazy" data-full="assets/img/quadra-1920.webp"><figcaption>Quadra</figcaption></figure>
-      <figure class="item"><img src="assets/img/coworking-760.webp" alt="Perspectiva ilustrada do coworking" width="760" height="424" loading="lazy" data-full="assets/img/coworking-1920.webp"><figcaption>Coworking</figcaption></figure>
-      <figure class="item"><img src="assets/img/lavanderia-760.webp" alt="Perspectiva ilustrada da lavanderia" width="760" height="342" loading="lazy" data-full="assets/img/lavanderia-1920.webp"><figcaption>Lavanderia</figcaption></figure>
-      <figure class="item"><img src="assets/img/delivery-760.webp" alt="Perspectiva ilustrada do espaço delivery" width="760" height="760" loading="lazy" data-full="assets/img/delivery-1920.webp"><figcaption>Espaço delivery</figcaption></figure>
-      <figure class="item grande"><img src="assets/img/pet-place-1200.webp" alt="Perspectiva ilustrada do pet place" width="1200" height="540" loading="lazy" data-full="assets/img/pet-place-1920.webp"><figcaption>Pet place</figcaption></figure>
+      <figure class="gal-palco">
+        <img id="galImg" src="assets/img/portaria-1920.webp"
+             alt="Perspectiva ilustrada da portaria" width="1920" height="864"
+             data-full="assets/img/portaria-1920.webp">
+        <figcaption id="galCap">Portaria</figcaption>
+      </figure>
+
+      <div class="gal-carrossel">
+        <button type="button" class="gal-nav gal-prev" aria-label="Ver anterior" aria-controls="galThumbs">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+
+        <ul class="gal-thumbs" id="galThumbs" role="tablist" aria-label="Áreas comuns">
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="true"
+            data-src="assets/img/portaria-1920.webp" data-cap="Portaria"
+            data-alt="Perspectiva ilustrada da portaria"><img src="assets/img/portaria-760.webp" alt="" width="760" height="342" loading="lazy"><span>Portaria</span></button></li>
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="false"
+            data-src="assets/img/salao-festas-1920.webp" data-cap="Salão de festas"
+            data-alt="Perspectiva ilustrada do salão de festas"><img src="assets/img/salao-festas-760.webp" alt="" width="760" height="424" loading="lazy"><span>Salão de festas</span></button></li>
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="false"
+            data-src="assets/img/churrasqueira-1920.webp" data-cap="Churrasqueira"
+            data-alt="Perspectiva ilustrada da churrasqueira"><img src="assets/img/churrasqueira-760.webp" alt="" width="760" height="424" loading="lazy"><span>Churrasqueira</span></button></li>
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="false"
+            data-src="assets/img/fitness-1920.webp" data-cap="Fitness"
+            data-alt="Perspectiva ilustrada do fitness"><img src="assets/img/fitness-760.webp" alt="" width="760" height="446" loading="lazy"><span>Fitness</span></button></li>
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="false"
+            data-src="assets/img/brinquedoteca-1920.webp" data-cap="Brinquedoteca"
+            data-alt="Perspectiva ilustrada da brinquedoteca"><img src="assets/img/brinquedoteca-760.webp" alt="" width="760" height="342" loading="lazy"><span>Brinquedoteca</span></button></li>
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="false"
+            data-src="assets/img/playground-1920.webp" data-cap="Playground"
+            data-alt="Perspectiva ilustrada do playground"><img src="assets/img/playground-760.webp" alt="" width="760" height="424" loading="lazy"><span>Playground</span></button></li>
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="false"
+            data-src="assets/img/quadra-1920.webp" data-cap="Quadra"
+            data-alt="Perspectiva ilustrada da quadra"><img src="assets/img/quadra-760.webp" alt="" width="760" height="428" loading="lazy"><span>Quadra</span></button></li>
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="false"
+            data-src="assets/img/coworking-1920.webp" data-cap="Coworking"
+            data-alt="Perspectiva ilustrada do coworking"><img src="assets/img/coworking-760.webp" alt="" width="760" height="424" loading="lazy"><span>Coworking</span></button></li>
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="false"
+            data-src="assets/img/lavanderia-1920.webp" data-cap="Lavanderia"
+            data-alt="Perspectiva ilustrada da lavanderia"><img src="assets/img/lavanderia-760.webp" alt="" width="760" height="342" loading="lazy"><span>Lavanderia</span></button></li>
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="false"
+            data-src="assets/img/delivery-1920.webp" data-cap="Espaço delivery"
+            data-alt="Perspectiva ilustrada do espaço delivery"><img src="assets/img/delivery-760.webp" alt="" width="760" height="760" loading="lazy"><span>Espaço delivery</span></button></li>
+          <li role="presentation"><button type="button" role="tab" class="gal-thumb" aria-selected="false"
+            data-src="assets/img/pet-place-1920.webp" data-cap="Pet place"
+            data-alt="Perspectiva ilustrada do pet place"><img src="assets/img/pet-place-760.webp" alt="" width="760" height="342" loading="lazy"><span>Pet place</span></button></li>
+        </ul>
+
+        <button type="button" class="gal-nav gal-next" aria-label="Ver próxima" aria-controls="galThumbs">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+      </div>
     </div>
     <p class="obs" style="margin-top:20px;font-size:12.5px;color:var(--tinta-suave)">Perspectivas ilustradas. Sujeitas a alteração sem aviso prévio.</p>
   </div>
@@ -337,7 +378,8 @@
 <section>
   <div class="container reveal">
     <p class="eyebrow">Realização</p>
-    <h2>Solidi Engenharia<br>e Construções</h2>
+    <img class="logo-solidi" src="assets/img/logo-solidi.svg" alt="Solidi Engenharia e Construções" width="217" height="48" loading="lazy">
+    <h2 class="sr-only">Solidi Engenharia e Construções</h2>
     <p class="lead" style="margin-top:20px">Atuando desde 1988 no mercado imobiliário, a Solidi conquistou posição de destaque na construção civil e uma extensa carteira de clientes. Projetos reconhecidos pela qualidade e pela beleza, sempre com o compromisso de entregar nos prazos.</p>
     <div class="solidi-num">
       <div><strong>62</strong><span>Empreendimentos entregues</span></div>
@@ -368,8 +410,10 @@
         </p>
       </div>
       <div>
-        <p style="margin:0 0 8px;color:rgba(255,255,255,.4);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase">Realização</p>
-        <p style="margin:0">Solidi Engenharia e Construções</p>
+        <p style="margin:0 0 14px;color:rgba(255,255,255,.4);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase">Realização</p>
+        <a href="https://www.solidi.com.br/" target="_blank" rel="noopener" aria-label="Solidi Engenharia e Construções">
+          <img class="logo-solidi-rodape" src="assets/img/logo-solidi-branco.svg" alt="Solidi Engenharia e Construções" width="217" height="48" loading="lazy">
+        </a>
       </div>
     </div>
     <p class="disc">
