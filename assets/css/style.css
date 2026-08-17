@@ -49,6 +49,16 @@ h3{font-size:clamp(19px,2vw,23px);letter-spacing:.12em;text-transform:uppercase}
 section{padding:clamp(72px,9vw,130px) 0}
 .sec-quente{background:var(--fundo-quente)}
 
+/* faixa da fachada, fixa no scroll, antes das areas comuns */
+.faixa-fachada{
+  height:clamp(300px,44vh,470px);
+  background-image:url('../img/fachada-1920.webp');
+  background-size:cover;
+  background-position:center 42%;
+  background-repeat:no-repeat;
+  background-attachment:fixed
+}
+
 /* blocos coloridos, assinatura grafica do book */
 .blocos{display:flex;gap:9px;align-items:flex-end;height:74px;margin-bottom:34px}
 .blocos i{display:block;width:26px;border-radius:1px}
@@ -102,7 +112,7 @@ section{padding:clamp(72px,9vw,130px) 0}
 .hero-topo{position:absolute;left:0;right:0;top:calc(var(--header-h) + 22px);z-index:3}
 .hero-topo .container{display:flex;justify-content:flex-end}
 .selo-mcmv img{
-  width:clamp(104px,10vw,132px);height:auto;display:block;
+  width:clamp(142px,13.5vw,182px);height:auto;display:block;
   filter:drop-shadow(0 2px 14px rgba(20,16,14,.6))
 }
 .hero-chamadas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
@@ -327,6 +337,8 @@ button[disabled]{opacity:.55;cursor:not-allowed}
   .pois{columns:1}
   .campos{grid-template-columns:1fr}
   .legenda{grid-template-columns:1fr 1fr}
+  /* iOS Safari nao renderiza background-attachment:fixed corretamente */
+  .faixa-fachada{background-attachment:scroll;height:clamp(230px,36vh,330px)}
 }
 @media (max-width:640px){
   body{font-size:16px}
