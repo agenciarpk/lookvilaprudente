@@ -32,7 +32,10 @@
       <img class="logo logo-branco" src="assets/img/logo-look-branco-900.webp" alt="LOOK Vila Prudente" width="900" height="445">
       <img class="logo logo-cor" src="assets/img/logo-look-900.webp" alt="LOOK Vila Prudente" width="900" height="445">
     </a>
-    <a href="#cadastro" class="btn btn-ghost">Saiba mais</a>
+    <div class="header-acoes">
+      <a href="#decorado" class="btn btn-ghost">Visite o decorado</a>
+      <a href="#cadastro" class="btn btn-ghost">Saiba mais</a>
+    </div>
   </div>
 </header>
 
@@ -57,7 +60,10 @@
       <span class="tag">Plantas de 1 e 2 dorms</span>
     </div>
     <p class="hero-frase">Um novo jeito de ver a vida</p>
-    <a href="#cadastro" class="btn">Cadastre-se e receba em primeira mão</a>
+    <div class="hero-acoes">
+      <a href="#cadastro" class="btn">Cadastre-se e receba em primeira mão</a>
+      <a href="#decorado" class="btn btn-claro">Visite o decorado</a>
+    </div>
     <p class="hero-end">Rua das Giestas, 313 &nbsp;·&nbsp; Vila Prudente &nbsp;·&nbsp; São Paulo</p>
   </div>
 </section>
@@ -263,9 +269,15 @@
 
     <div class="loc-grid reveal">
       <div>
-        <p class="eyebrow" style="margin-bottom:10px">Visite o decorado</p>
-        <h3 style="margin-bottom:14px">Rua das Giestas, 313</h3>
-        <p class="lead" style="margin-top:0">Vila Prudente, São Paulo, SP</p>
+        <div class="decorado" id="decorado">
+          <span class="decorado-selo">Apartamento decorado</span>
+          <h3 class="decorado-titulo">Visite o decorado</h3>
+          <p class="decorado-end">Rua das Giestas, 313<br>Vila Prudente, São Paulo, SP</p>
+          <div class="decorado-acoes">
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Rua%20das%20Giestas%2C%20313%20-%20Vila%20Prudente%2C%20S%C3%A3o%20Paulo%20-%20SP" target="_blank" rel="noopener">Como chegar</a>
+            <a class="btn btn-linha" href="#cadastro">Agendar minha visita</a>
+          </div>
+        </div>
         <iframe class="mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da localização do LOOK Vila Prudente"
           src="https://www.google.com/maps?q=Rua%20das%20Giestas,%20313%20-%20Vila%20Prudente,%20S%C3%A3o%20Paulo%20-%20SP&output=embed"></iframe>
       </div>
@@ -414,6 +426,7 @@
           <a href="#areas">Áreas comuns</a><br>
           <a href="#implantacao">Implantação</a><br>
           <a href="#localizacao">Localização</a><br>
+          <a href="#decorado">Visite o decorado</a><br>
           <a href="#cadastro">Cadastro</a><br>
           <a href="privacidade.html">Política de Privacidade</a>
         </p>
@@ -426,7 +439,7 @@
       </div>
       <div>
         <p style="margin:0 0 14px;color:rgba(255,255,255,.4);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase">Desenvolvimento</p>
-        <a href="https://ciadom2.com.br/" target="_blank" rel="noopener" aria-label="Cia360">
+        <a href="https://cia360.com.br/" target="_blank" rel="noopener" aria-label="Cia360">
           <img class="logo-cia-rodape" src="assets/img/logo-cia360-branco.png" alt="Cia360" width="120" height="68" loading="lazy">
         </a>
       </div>
@@ -438,7 +451,10 @@
   </div>
 </footer>
 
-<div class="barra-mob"><a href="#cadastro" class="btn">Saiba mais sobre o lançamento</a></div>
+<div class="barra-mob">
+  <a href="#decorado" class="btn btn-linha">Visite o decorado</a>
+  <a href="#cadastro" class="btn">Saiba mais</a>
+</div>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
   <button class="fechar" id="lbFechar" aria-label="Fechar">&times;</button>
