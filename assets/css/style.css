@@ -97,7 +97,12 @@ section{padding:clamp(72px,9vw,130px) 0}
 /* botao secundario sobre a capa */
 .btn-claro{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.85);color:#fff;backdrop-filter:blur(3px)}
 .btn-claro:hover{background:#fff;color:var(--terracota)}
-.header-acoes{display:flex;align-items:center;gap:12px}
+/* botao unico do topo, largo e em cor cheia */
+.btn-topo{
+  background:var(--terracota);border:1px solid var(--terracota);color:#fff;
+  min-width:376px;text-align:center
+}
+.btn-topo:hover{background:#9d573c;border-color:#9d573c;color:#fff}
 
 /* ---------- hero ---------- */
 .hero{
@@ -335,15 +340,12 @@ button[disabled]{opacity:.55;cursor:not-allowed}
 
 /* ---------- barra fixa mobile ---------- */
 .barra-mob{
-  position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;
+  position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
   padding:11px 16px calc(11px + env(safe-area-inset-bottom));
   background:rgba(255,255,255,.97);border-top:1px solid var(--linha);
   backdrop-filter:blur(8px)
 }
-.barra-mob .btn{
-  flex:1 1 0;min-width:0;text-align:center;padding:15px 8px;
-  font-size:10.5px;letter-spacing:.13em;line-height:1.3
-}
+.barra-mob .btn{display:block;width:100%;text-align:center;padding:16px}
 
 /* ---------- lightbox ---------- */
 .lightbox{
@@ -365,15 +367,14 @@ button[disabled]{opacity:.55;cursor:not-allowed}
   .pois{columns:1}
   .campos{grid-template-columns:1fr}
   .legenda{grid-template-columns:1fr 1fr}
-  .header-acoes{gap:8px}
-  .header-acoes .btn{padding:12px 16px;font-size:11px;letter-spacing:.14em}
+  .btn-topo{min-width:min(300px,46vw)}
   /* iOS Safari nao renderiza background-attachment:fixed corretamente */
   .faixa-fachada{background-attachment:scroll;height:clamp(230px,36vh,330px)}
 }
 @media (max-width:640px){
   body{font-size:16px}
   .header .btn{display:none}
-  .barra-mob{display:flex}
+  .barra-mob{display:block}
   .hero-acoes .btn{width:100%;text-align:center}
   .decorado-acoes .btn{flex:1 1 100%;text-align:center}
   body{padding-bottom:78px}
